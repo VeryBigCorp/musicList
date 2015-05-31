@@ -1,4 +1,13 @@
 Rails.application.routes.draw do
+  root 'landing#index'
+
+  get 'start' => 'main#index', as: 'start'
+
+  get 'song/new' => 'songs#new', as: 'new_song'
+
+  post 'song/create' => 'songs#create', as: 'create_song'
+
+  devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

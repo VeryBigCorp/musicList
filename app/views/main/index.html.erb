@@ -1,0 +1,29 @@
+<div class='container'>
+  <div class='row'>
+    <div class='col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-12 col-xs-12'>
+      <div class='panel panel-default'>
+        <div class='panel-heading'><b>My List</b></div>
+        <div class='panel-body'>
+          heres some text thatll show only if you havent added any songs yet at all ever, but
+          if youve listened to your whole list it wont come back yay
+          <br/><br/>
+          <%= link_to new_song_path, class:'btn btn-default', remote: true do %>
+            <i class='fa fa-plus'></i>&nbsp; Add New Song
+          <% end %>
+        </div>
+        <div class='table-responsive'>
+           <table class='table'>
+            <thead>
+              <td><b>Band</b></td>
+              <td><b>Song Title</b></td>
+              <td><b>Genre(s)</b></td>
+              </thead>
+            <tbody id="song_list">
+              <%= render current_user.songs %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
